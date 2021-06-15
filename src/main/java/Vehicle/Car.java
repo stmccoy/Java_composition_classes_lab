@@ -7,6 +7,7 @@ public class Car {
     private int wheels;
     private VehicleType vehicleType;
     private Engine engine;
+    private int damage;
 
     public Car(Engine engine, VehicleType vehicleType, double price, ColourOption colour) {
         this.engine = engine;
@@ -14,10 +15,11 @@ public class Car {
         this.vehicleType = vehicleType;
         this.price = price;
         this.colour = colour;
+        this.damage = 0
     }
 
     public double getPrice() {
-        return price;
+        return price - damage;
     }
 
     public ColourOption getColour() {
@@ -35,4 +37,17 @@ public class Car {
     public Engine getEngine() {
         return engine;
     }
+
+    public int getDamage(){
+        return damage;
+    }
+
+    public void damageCar(int damage){
+        this.damage += damage;
+    }
+
+    public void repairCar(){
+        this.damage = 0;
+    }
+
 }

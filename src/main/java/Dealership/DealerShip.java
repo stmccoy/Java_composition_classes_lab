@@ -69,4 +69,11 @@ public class DealerShip implements ICars, IMoney {
             this.removeCar(car);
         }
     }
+
+    public void repairCar(Car car){
+        if (this.profits >= car.getDamage()) {
+            car.repairCar();
+        }
+    }
+
 }
